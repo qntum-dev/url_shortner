@@ -1,0 +1,54 @@
+services:
+  server:
+    build:
+      context: ./src
+      dockerfile: Dockerfile
+    env_file:
+      - ./.env
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "${PORT}:${PORT}"
+    networks:
+      - app-network
+
+  postgres:
+    build:
+      context: ./postgres
+      dockerfile: Dockerfile
+    env_file:
+      - ./.env
+    volumes:
+      - ./postgres/scripts/create.sql:/docker-entrypoint-initdb.d/create.sql
+      - ./postgres/scripts/shortner.sql:/docker-entrypoint-initdb.d/shortner.sql
+      - ./postgres/data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5      
+    networks:
+      - app-network
+
+  redis:
+    build: 
+      context: ./redis
+      dockerfile: Dockerfile
+    env_file:
+      - ./.env
+    volumes:
+      - ./redis/data:/data
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "-p", "${REDIS_PORT}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  app-network:
+    driver: bridge

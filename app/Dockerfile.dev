@@ -1,0 +1,13 @@
+ARG BUILD_IMAGE=node:20.15-alpine3.20
+
+FROM ${BUILD_IMAGE} AS dev
+
+RUN npm install -g pnpm
+
+WORKDIR /shortner
+
+COPY package*.json ./
+
+RUN pnpm install
+
+COPY . .
