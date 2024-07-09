@@ -11,9 +11,9 @@ NodeJs, Express, PostgreSQL, Redis and containerized with Docker.
 
 ## Starting the server
 
-You can build the server using docker or locally on your host machine.
+You can build the server using docker.
 
-### For Docker
+To build the server you have to create a .env file.
 
 You can create your own .env file from the .env.template or you can use the .env.demo.
 
@@ -23,17 +23,7 @@ If you want to use .env.demo run this command in the root directory
 cp .env.demo .env
 ```
 
-#### Then run the server 
-### For Docker
+Then run the server
 ```
 docker compose up
-```
-
-### For LocalHost
-
-```
-pnpm i or npm i
-```
-```
-node ./app/index.js
 ```
