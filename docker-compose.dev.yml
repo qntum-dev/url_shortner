@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     env_file:
-      - ./.env.second
+      - ./.env.dev
     depends_on:
       postgres:
         condition: service_healthy
