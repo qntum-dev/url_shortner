@@ -30,7 +30,7 @@ docker compose up
 
 ## Develop and modify the project
 
-You can modify this project using docker and don't need to install any dependencies on your local dev environmen.
+You can modify this project using docker and don't need to install any dependencies on your local dev environment, you just need to code it in your host and it will be automatically updated in the development docker conatainer.
 
 Here is how you can do so
 
