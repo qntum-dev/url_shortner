@@ -28,6 +28,11 @@ Then run the server
 docker compose up
 ```
 
+To stop the servers
+```
+docker compose down
+```
+
 ## Develop and modify the project
 
 You can modify this project using docker and don't need to install any dependencies on your local dev environment, you just need to code it in your host and it will be automatically updated in the development docker conatainer.
@@ -45,7 +50,12 @@ cp ./.env.demo ./.env.dev
 ```
 
 ```
-sudo docker compose -f docker-compose.dev.yml up -d
+docker compose -f docker-compose.dev.yml up -d
+```
+#### Note: you have to use this command to stop your dev server!!!
+
+```
+docker compose -f docker-compose.dev.yml down
 ```
 
 As simple as that 😄, you can now start coding ! 
