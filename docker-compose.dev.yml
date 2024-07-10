@@ -24,7 +24,7 @@ services:
       context: ./postgres
       dockerfile: Dockerfile
     env_file:
-      - ./.env.second
+      - ./.env.dev
     volumes:
       - ./postgres/scripts/create.sql:/docker-entrypoint-initdb.d/create.sql
       - ./postgres/scripts/shortner.sql:/docker-entrypoint-initdb.d/shortner.sql
@@ -42,7 +42,7 @@ services:
       context: ./redis
       dockerfile: Dockerfile
     env_file:
-      - ./.env.second
+      - ./.env.dev
     volumes:
       - ./redis/data:/data
     networks:
