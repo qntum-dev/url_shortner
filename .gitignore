@@ -1,5 +1,5 @@
 /.env
 /.env.second
-/app/node_modules
-/app/package-lock.json
-/app/pnpm-lock.yaml
+/node_modules
+/package-lock.json
+/pnpm-lock.yaml
