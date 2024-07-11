@@ -37,6 +37,7 @@ services:
       - app-network
 
   redis:
+    image: redis/redis-stack-server:7.2.0-v5
     build: 
       context: ./redis
       dockerfile: Dockerfile
