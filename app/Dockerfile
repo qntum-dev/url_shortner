@@ -13,8 +13,8 @@ COPY . .
 
 FROM ${RUN_IMAGE}
 
-WORKDIR /backend
+WORKDIR /app
 
-COPY --from=build /shortner .
+COPY --from=build /app .
 
 CMD ["node","index.js"] 
