@@ -13,7 +13,7 @@ services:
     ports:
       - "${PORT}:${PORT}"
     volumes:
-      - .:/shortner/
+      - ./app:/app/
     command: npm run dev
 
     networks:

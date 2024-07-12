@@ -3,7 +3,7 @@ ARG RUN_IMAGE=gcr.io/distroless/nodejs20-debian11
 
 FROM ${BUILD_IMAGE} AS build
 
-WORKDIR /shortner
+WORKDIR /app
 
 COPY package*.json ./
 
