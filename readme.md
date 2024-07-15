@@ -76,7 +76,7 @@ Here "hsi1oo" is the shorcode for the url given by the shorten endpoint
 curl -L -X POST 'http://192.168.1.100:7000/shorten/update_dest/hsi1oo' -H 'Content-Type: application/json' -d '{"newurl": "https://google.com"}'
 ```
 
-- `GET /goto/hsi1oo`
+- `GET /hsi1oo`
 ```
 curl -L -X GET 'http://192.168.1.100:7000/hsi1oo'
 ```
