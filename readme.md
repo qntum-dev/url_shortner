@@ -1,4 +1,4 @@
-# Url Shortner
+# URL Shortner
 This is a backend service for an url shortening software. This backend is capable to shorten url and also get their analytics.
 
 ## Built with
